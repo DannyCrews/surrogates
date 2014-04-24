@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+    task1 = Task.create(name: 'Write feature spec',
+                        description: 'Write a test that describes what the user should be able to do',
+                        status: 'open')
+
+    task2 = Task.create(name: 'Write feature spec',
+                        description: 'Write a test that describes what the user should be able to do',
+                        status: 'closed')
+
+    task3 = Task.create(name: 'Write feature spec',
+                        description: 'Write a test that describes what the user should be able to do',
+                        status: 'open')

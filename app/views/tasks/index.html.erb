@@ -1,7 +1,13 @@
-<h1>2 Tasks</h1>
+<h1><%= pluralize(@tasks.size, 'Task') %></h1>
 
-<ul>
-  <% @tasks.each do |task| %>
-  <li><%= task %></li>
-  <% end %>
-</ul>
+<% @tasks.each do |task| %>
+  <article>
+    <header>
+      <h2><%= task.name %></h2>
+    </header>
+    <p>
+      <%= task.description %>
+      <%= task.status %>
+    </p>
+  </article>
+<% end %>

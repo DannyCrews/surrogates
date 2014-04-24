@@ -1,13 +1,30 @@
 require 'spec_helper'
 
 describe "Viewing a list of tasks" do
-
+  
   it "shows the tasks" do
-    visit 'http://example.com/tasks'
+    task1 = Task.create(name: 'Write feature spec',
+                        description: 'Write a test that describes what the user should be able to do',
+                        status: 'open')
 
-    expect(page).to have_text("2 Tasks")
-    expect(page).to have_text("Task 1")
-    expect(page).to have_text("Task 2")
+    task2 = Task.create(name: 'Write feature spec',
+                        description: 'Write a test that describes what the user should be able to do',
+                        status: 'closed')
+
+    task3 = Task.create(name: 'Write feature spec',
+                        description: 'Write a test that describes what the user should be able to do',
+                        status: 'open')
+
+    visit tasks_url
+
+    expect(page).to have_text("Tasks")
+    expect(page).to have_text(task1.name)
+    expect(page).to have_text(task2.name)
+    expect(page).to have_text(task3.name)
+
+    expect(page).to have_text(task1.description)
+    expect(page).to have_text(task1.status)
+
   end
   
 end
