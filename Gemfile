@@ -38,6 +38,8 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem "pry-rails"
+
 group :test, :development do
   gem "minitest"
   gem "rspec-rails", "2.14.1"
