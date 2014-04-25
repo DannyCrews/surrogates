@@ -3,10 +3,12 @@
 <% @tasks.each do |task| %>
   <article>
     <header>
-      <h2><%= task.name %></h2>
+      <h2><%= link_to task.name, task %></h2>
     </header>
     <p>
       <%= task.description %>
+    </p>
+    <p>
       <%= task.status %>
     </p>
   </article>

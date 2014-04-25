@@ -1,9 +1,13 @@
-<h1>Editing Surrogate: <%= @surrogate.name %></h1>
+<h1>Editing Task: <%= @task.name %></h1>
 
-<%= form_for(@surrogate) do |f| %>
+<%= form_for(@task) do |f| %>
   <p>
     <%= f.label :name %><br/>
     <%= f.text_field :name %>
+  </p>
+    <p>
+    <%= f.label :description %><br/>
+    <%= f.text_area :description %>
   </p>
   <p>
     <%= f.label :status %><br/>
