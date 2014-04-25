@@ -4,4 +4,8 @@ class SurrogatesController < ApplicationController
     @surrogates = Surrogate.all
   end
 
+  def show
+    @surrogate = Surrogate.find(params[:id])
+  end
+
 end
