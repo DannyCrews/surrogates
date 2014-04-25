@@ -1,0 +1,12 @@
+<h1><%= pluralize(@surrogates.size, 'Surrogate') %></h1>
+
+<% @surrogates.each do |surrogate| %>
+  <article>
+    <header>
+      <h2><%= surrogate.name %></h2>
+    </header>
+    <p>
+      <%= surrogate.status %>
+    </p>
+  </article>
+<% end %>
