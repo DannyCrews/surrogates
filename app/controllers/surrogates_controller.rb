@@ -28,6 +28,12 @@ class SurrogatesController < ApplicationController
     redirect_to @surrogate
   end
 
+  def destroy
+    @surrogate = Surrogate.find(params[:id])
+    @surrogate.destroy
+    redirect_to surrogates_url
+  end
+
   private
 
   def surrogate_params

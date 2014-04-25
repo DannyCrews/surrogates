@@ -9,6 +9,7 @@
 </article>
 
 <nav>
-  <%= link_to "All Surrogates", surrogates_path %>
-  <%= link_to "Edit", edit_surrogate_path(@surrogate) %>
+  <%= link_to "All Surrogates", surrogates_path %> |
+  <%= link_to "Edit", edit_surrogate_path(@surrogate) %> |
+  <%= link_to "Delete", surrogate_path(@surrogate), method: :delete, data: {confirm: 'Are you sure?'}  %>
 </nav>
