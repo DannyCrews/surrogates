@@ -4,8 +4,7 @@ describe "Viewing an individual surrogate" do
 
   it "shows a surrogate's details" do
 
-    surrogate = Surrogate.create(name: 'Dan',
-                                 status: 'applied')
+    surrogate = Surrogate.create(surrogate_attributes)
 
     visit surrogate_url(surrogate)
 

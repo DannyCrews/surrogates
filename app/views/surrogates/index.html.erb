@@ -3,7 +3,7 @@
 <% @surrogates.each do |surrogate| %>
   <article>
     <header>
-      <h2><%= surrogate.name %></h2>
+      <h2><%= link_to surrogate.name, surrogate %></h2>
     </header>
     <p>
       <%= surrogate.status %>
