@@ -1,5 +1,7 @@
 <h1><%= pluralize(@tasks.size, 'Task') %></h1>
 
+<%= link_to "Add New Task", new_task_path %>
+
 <% @tasks.each do |task| %>
   <article>
     <header>
