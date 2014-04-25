@@ -1,5 +1,8 @@
 <h1><%= pluralize(@surrogates.size, 'Surrogate') %></h1>
 
+<%= link_to "Add New Surrogate", new_surrogate_path %>
+
+
 <% @surrogates.each do |surrogate| %>
   <article>
     <header>
