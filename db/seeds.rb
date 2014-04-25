@@ -17,3 +17,12 @@
     task3 = Task.create(name: 'Write feature spec',
                         description: 'Write a test that describes what the user should be able to do',
                         status: 'open')
+
+    surrogate1 = Surrogate.create(name: 'Dan',
+                        status: 'applied')
+
+    surrogate2 = Surrogate.create(name: 'Cynthia',
+                        status: 'accepted')
+
+    surrogate3 = Surrogate.create(name: 'Will',
+                        status: 'approved')
