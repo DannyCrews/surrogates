@@ -1,0 +1,14 @@
+<%= form_for(@surrogate) do |f| %>
+  <p>
+    <%= f.label :name %><br/>
+    <%= f.text_field :name, autofocus: true %>
+  </p>
+  <p>
+    <%= f.label :status %><br/>
+    <%= f.text_field :status %>
+  </p>
+  <p>
+    <%= f.submit %>
+    <%= link_to "Cancel", surrogates_path %>
+  </p>
+<% end %>
