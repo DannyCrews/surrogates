@@ -40,6 +40,8 @@ gem 'spring',        group: :development
 
 gem "pry-rails"
 
+gem "aasm"
+
 group :test, :development do
   gem "minitest"
   gem "rspec-rails", "2.14.1"
