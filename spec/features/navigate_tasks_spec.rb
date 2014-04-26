@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "Navigating tasks" do
 
   it "allows navigation from the detail page to the listing page" do
-    task = Task.create(surrogate_attributes)
+    task = Task.create(task_attributes)
 
     visit task_url(task)
 

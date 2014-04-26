@@ -6,24 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Task.create!([
-    {
-    name: 'Write feature spec',
-    description: 'Write a test that describes what the user should be able to do',
-    status: 'open'
-    },
-    {
-    name: 'Write feature spec',
-    description: 'Write a test that describes what the user should be able to do',
-    status: 'closed'
-    },
-    {
-    name: 'Write feature spec',
-    description: 'Write a test that describes what the user should be able to do',
-    status: 'open'
-    }
-])
-
 Surrogate.create!([
     {
     name: 'Dan',
@@ -38,3 +20,13 @@ Surrogate.create!([
     status: 'approved'
     }
 ])
+
+
+surrogate = Surrogate.find_by(name: 'Dan')
+surrogate.tasks.create!(name: 'Write feature spec', description: 'Write a test that describes what the user should be able to do',
+                        status: 'open')
+surrogate.tasks.create!(name: 'Test feature spec', description: 'Run rSpec to test features',
+                        status: 'closed')
+surrogate = Surrogate.find_by(name: 'Cynthia')
+surrogate.tasks.create!(name: 'Bring coffee', description: 'Bring Dan some coffee!',
+                        status: 'open')

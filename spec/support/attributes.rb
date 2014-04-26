@@ -5,11 +5,11 @@ def surrogate_attributes(overrides = {})
   }.merge(overrides)
 end
 
-def task_attributes()
+def task_attributes(overrides = {})
   {
     name: 'Write feature spec',
     description: 'Write another test',
     status: 'open'
-  }
+  }.merge(overrides)
 end
 
