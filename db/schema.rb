@@ -11,17 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140425203853) do
+ActiveRecord::Schema.define(version: 20140426004015) do
 
   create_table "surrogates", force: true do |t|
     t.string   "name"
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "task_id"
   end
-
-  add_index "surrogates", ["task_id"], name: "index_surrogates_on_task_id"
 
   create_table "tasks", force: true do |t|
     t.string   "name"
@@ -29,6 +26,9 @@ ActiveRecord::Schema.define(version: 20140425203853) do
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "surrogate_id"
   end
+
+  add_index "tasks", ["surrogate_id"], name: "index_tasks_on_surrogate_id"
 
 end
