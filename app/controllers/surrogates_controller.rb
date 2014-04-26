@@ -2,6 +2,7 @@ class SurrogatesController < ApplicationController
 
   def index
     @surrogates = Surrogate.all
+    # @rejected_surrogates = surrogates.rejected
   end
 
   def  show
