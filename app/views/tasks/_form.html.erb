@@ -1,4 +1,5 @@
-<%= form_for(@task) do |f| %>
+<%= form_for([@surrogate, @task]) do |f| %>
+<%= render 'shared/errors', object: @task %>
   <p>
     <%= f.label :name %><br/>
     <%= f.text_field :name, autofocus: true %>
@@ -9,10 +10,11 @@
   </p>
   <p>
     <%= f.label :status %><br/>
-    <%= f.text_field :status %>
+    <%= f.select  :status, Task::STATUS_OPTIONS, prompt: "Choose One" %>
   </p>
   <p>
     <%= f.submit %>
-    <%= link_to "Cancel", tasks_path %>
+    <%= link_to "Cancel", surrogates_path, class: "button" %>
   </p>
+
 <% end %>

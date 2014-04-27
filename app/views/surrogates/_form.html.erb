@@ -1,4 +1,5 @@
 <%= form_for(@surrogate) do |f| %>
+  <%= render 'shared/errors', object: @surrogate %>
   <p>
     <%= f.label :name %><br/>
     <%= f.text_field :name, autofocus: true %>

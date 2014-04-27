@@ -8,6 +8,7 @@
 <%= link_to "#{@surrogate.name}'s Tasks", surrogate_tasks_path(@surrogate) %>
 
 <footer>
+  <%= link_to "Add New Task", new_surrogate_task_path(@surrogate), class: "button" %>
   <nav>
     <%= link_to "All Surrogates", surrogates_path %> |
     <%= link_to "Edit", edit_surrogate_path(@surrogate) %> |

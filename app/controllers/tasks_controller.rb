@@ -1,9 +1,9 @@
 class TasksController < ApplicationController
+  before_action :set_task
 
   def index
     # fail
     # @tasks = Task.all
-    @surrogate = Surrogate.find(params[:surrogate_id])
     @tasks = @surrogate.tasks
   end
 
@@ -12,13 +12,17 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = Task.new
+    @task = @surrogate.tasks.new
   end
 
   def create
-    @task = Task.new(task_params)
-    @task.save
-    redirect_to @task
+    @task = @surrogate.tasks.new(task_params)
+    if @task.save
+      redirect_to surrogate_tasks_path(@surrogate), notice: "Task 
+      Created"
+    else
+      render :new
+    end
   end
 
   def edit
@@ -40,7 +44,11 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:name, :description, :status, :surrogate_id)
+    params.require(:task).permit(:name, :description, :status)
+  end
+
+  def set_task
+    @surrogate = Surrogate.find(params[:surrogate_id])
   end
 
 end
