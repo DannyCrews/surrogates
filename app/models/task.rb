@@ -21,4 +21,10 @@ class Task < ActiveRecord::Base
   validates :name, presence: true
   validates :description, length: {minimum: 4}
   validates :status, presence: true
+
+  STATUS_OPTIONS = [
+    'closed',
+    'open'
+  ]
+  validates :status, inclusion: { in: STATUS_OPTIONS }
 end
