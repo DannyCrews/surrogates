@@ -1,13 +1,11 @@
 <header>
-<h1><%= pluralize(@tasks.size, 'Task') %></h1>
+<h1>Tasks for <%= link_to(@surrogate.name, @surrogate) %></h1>
 </header>
-
-<%= link_to "Add New Task", new_task_path %>
 
 <% @tasks.each do |task| %>
   <article>
     <header>
-      <h2><%= link_to task.name, task %></h2> 
+      <!-- <h2><%#= link_to task.name, task %> -->
     </header>
     <p>
       <%= task.description %>
@@ -15,9 +13,8 @@
     <p>
       <%= task.status %>
     </p>
-    <p>
-    <%= task.surrogate %>
-    </p>
 
   </article>
 <% end %>
+
+<%#= link_to "Add New Task", new_task_path %>

@@ -1,7 +1,10 @@
 class TasksController < ApplicationController
 
   def index
-    @tasks = Task.all
+    # fail
+    # @tasks = Task.all
+    @surrogate = Surrogate.find(params[:surrogate_id])
+    @tasks = @surrogate.tasks
   end
 
   def show
