@@ -46,11 +46,15 @@ class Surrogate < ActiveRecord::Base
   validates :status, inclusion: { in: STATUS_OPTIONS }
 
   def rejected_surrogates
-    # @surrogates.each do |surrogate|
      if self.status == 'rejected'
        self.name
      end
-    # end
+  end
+
+  def more_than_two
+    if self.tasks.closed.count > 2
+      self.name
+    end
   end
 
 end

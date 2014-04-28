@@ -9,16 +9,25 @@
       <h2><%= link_to surrogate.name, surrogate %></h2>
     </header>
     <p>
-      <%= surrogate.status %>
+      status: <%= surrogate.status %>
     </p>
     <p>
-      <%= surrogate.tasks %>
+      <%= surrogate.tasks.name %>
     </p>
   </article>
 <% end %>
 
 
 <h3>Rejected Surrogates</h3>
+<p>
 <% @surrogates.each do |surrogate| %>
   <%= surrogate.rejected_surrogates %>
 <% end %>
+</p>
+
+<h3>Surrogates Completing more than Two Tasks</h3>
+<p>
+<% @surrogates.each do |surrogate| %>
+  <%= surrogate.more_than_two %>
+<% end %>
+</p>

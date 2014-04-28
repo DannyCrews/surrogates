@@ -17,7 +17,7 @@ Surrogate.create!([
     },
     {
     name: 'Will',
-    status: 'approved'
+    status: 'rejected'
     }
 ])
 
@@ -27,6 +27,11 @@ surrogate.tasks.create!(name: 'Write feature spec', description: 'Write a test t
                         status: 'open')
 surrogate.tasks.create!(name: 'Test feature spec', description: 'Run rSpec to test features',
                         status: 'closed')
+surrogate.tasks.create!(name: 'Write feature spec2', description: 'Write a test that describes what the user should be able to do',
+                        status: 'closed')
+surrogate.tasks.create!(name: 'Test feature spec2', description: 'Run rSpec to test features',
+                        status: 'closed')
+
 surrogate = Surrogate.find_by(name: 'Cynthia')
 surrogate.tasks.create!(name: 'Bring coffee', description: 'Bring Dan some coffee!',
                         status: 'open')

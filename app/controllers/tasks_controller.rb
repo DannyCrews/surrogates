@@ -2,8 +2,6 @@ class TasksController < ApplicationController
   before_action :set_task
 
   def index
-    # fail
-    # @tasks = Task.all
     @tasks = @surrogate.tasks
   end
 
