@@ -1,5 +1,5 @@
 Surrogates::Application.routes.draw do
-  root 'tasks#index'
+  root 'surrogates#index'
 
   resources :surrogates do
       resources :tasks

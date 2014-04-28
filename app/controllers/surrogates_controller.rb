@@ -8,16 +8,6 @@ class SurrogatesController < ApplicationController
     @surrogate = Surrogate.find(params[:id])
   end
 
-  def new
-    @surrogate = Surrogate.new
-  end
-
-  def create
-    @surrogate = Surrogate.new(surrogate_params)
-    @surrogate.save
-    redirect_to @surrogate
-  end
-
   def edit
     @surrogate = Surrogate.find(params[:id])
   end
@@ -25,6 +15,16 @@ class SurrogatesController < ApplicationController
   def update
     @surrogate = Surrogate.find(params[:id])
     @surrogate.update(surrogate_params)
+    redirect_to @surrogate
+  end
+
+  def new
+    @surrogate = Surrogate.new
+  end
+
+  def create
+    @surrogate = Surrogate.new(surrogate_params)
+    @surrogate.save
     redirect_to @surrogate
   end
 
