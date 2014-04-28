@@ -1,7 +1,23 @@
 <header>
-<h1>New Task for <%= link_to @surrogate.name, @surrogate %></h1>
+  <h1>New Task for <%= link_to @surrogate.name, @surrogate %></h2>
 </header>
 
-
-
-<%= render 'form' %>
+<%= form_for([@surrogate, @task]) do |f| %>
+<%= render 'shared/errors', object: @task %>
+  <p>
+    <%= f.label :name %><br/>
+    <%= f.text_field :name, autofocus: true %>
+  </p>
+    <p>
+    <%= f.label :description %><br/>
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :status %><br/>
+    <%= f.select  :status, Task::STATUS_OPTIONS, prompt: "Choose One" %>
+  </p>
+  <p>
+    <%= f.submit %>
+    <%= link_to "Cancel", surrogates_path, class: "button" %>
+  </p>
+<% end %>

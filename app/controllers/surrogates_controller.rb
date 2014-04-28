@@ -14,8 +14,11 @@ class SurrogatesController < ApplicationController
 
   def update
     @surrogate = Surrogate.find(params[:id])
-    @surrogate.update(surrogate_params)
-    redirect_to @surrogate
+    if @surrogate.update(surrogate_params)
+      redirect_to @surrogate, notice: "surrogate successfully updated!"
+    else
+      render :edit
+    end
   end
 
   def new
@@ -24,14 +27,17 @@ class SurrogatesController < ApplicationController
 
   def create
     @surrogate = Surrogate.new(surrogate_params)
-    @surrogate.save
-    redirect_to @surrogate
+    if @surrogate.save
+      redirect_to @surrogate, notice: "Surrogate successfully created."
+    else
+      render :new
+    end
   end
 
   def destroy
     @surrogate = Surrogate.find(params[:id])
     @surrogate.destroy
-    redirect_to surrogates_url
+    redirect_to surrogates_url, alert: "Surrogate successfully deleted."
   end
 
   private
@@ -39,5 +45,4 @@ class SurrogatesController < ApplicationController
   def surrogate_params
       params.require(:surrogate).permit(:name, :status)
   end
-
 end

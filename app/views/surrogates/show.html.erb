@@ -11,7 +11,7 @@
   <%= link_to "Add New Task", new_surrogate_task_path(@surrogate), class: "button" %>
   <nav>
     <%= link_to "All Surrogates", surrogates_path %> |
-    <%= link_to "Edit", edit_surrogate_path(@surrogate) %> |
-    <%= link_to "Delete", surrogate_path(@surrogate), method: :delete, data: {confirm: 'Are you sure?'}  %>
+    <%= link_to "Edit", edit_surrogate_path(@surrogate), class: 'button' %> |
+    <%= link_to "Delete", @surrogate, class: "button", method: :delete, data: {confirm: 'Are you sure?'}  %>
   </nav>
 </footer>

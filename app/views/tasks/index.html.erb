@@ -4,17 +4,13 @@
 
 <% @tasks.each do |task| %>
   <article>
-    <header>
-      <!-- <h2><%#= link_to task.name, task %> -->
-    </header>
     <p>
       <%= task.description %>
     </p>
     <p>
       <%= task.status %>
     </p>
-
   </article>
-<% end %>
 
-<%#= link_to "Add New Task", new_task_path %>
+  
+<% end %>
