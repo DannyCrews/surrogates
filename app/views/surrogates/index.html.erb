@@ -17,5 +17,8 @@
   </article>
 <% end %>
 
-<h2>Rejected Surrogates</h2>
-<%= @surrogates.rejected.as_json %>
+
+<h3>Rejected Surrogates</h3>
+<% @surrogates.each do |surrogate| %>
+  <%= surrogate.rejected_surrogates %>
+<% end %>
